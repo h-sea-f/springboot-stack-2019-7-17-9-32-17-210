@@ -3,7 +3,7 @@ package com.tw.apistackbase.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="case")
+@Table(name = "case")
 public class Case {
     @Id
     @GeneratedValue
@@ -12,6 +12,28 @@ public class Case {
     private String caseName;
     @Column(nullable = false)
     private long caseTime;
+    @OneToOne
+    @JoinColumn(name = "information_id", nullable = false)
+    private CriminalInformation criminalInformation;
+    @OneToOne
+    @JoinColumn(name = "institute_id", nullable = false)
+    private Institute institute;
+
+    public CriminalInformation getCriminalInformation() {
+        return criminalInformation;
+    }
+
+    public void setCriminalInformation(CriminalInformation criminalInformation) {
+        this.criminalInformation = criminalInformation;
+    }
+
+    public Institute getInstitute() {
+        return institute;
+    }
+
+    public void setInstitute(Institute institute) {
+        this.institute = institute;
+    }
 
     public int getId() {
         return id;
