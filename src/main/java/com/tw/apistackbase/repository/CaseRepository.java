@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 public interface CaseRepository extends JpaRepository<Case,Integer> {
-    List<Case> findByOrderByCaseTimeDesc();
+    List<Case> findAllByOrderByCaseTimeDesc();
     List<Case> findByCaseName(String caseName);
     Case deleteById(int id);
 }
