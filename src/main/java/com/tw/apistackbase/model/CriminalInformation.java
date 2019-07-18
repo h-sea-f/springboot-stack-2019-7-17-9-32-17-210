@@ -16,6 +16,11 @@ public class CriminalInformation {
     public CriminalInformation() {
     }
 
+    public CriminalInformation(String objectiveElement, String subjectiveElement) {
+        this.objectiveElement = objectiveElement;
+        this.subjectiveElement = subjectiveElement;
+    }
+
     public int getId() {
         return id;
     }

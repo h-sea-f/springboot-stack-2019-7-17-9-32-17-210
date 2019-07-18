@@ -11,6 +11,13 @@ public class Ombudsman {
     @Column(nullable = false)
     private String name;
 
+    public Ombudsman(String name) {
+        this.name = name;
+    }
+
+    public Ombudsman() {
+    }
+
     public int getId() {
         return id;
     }

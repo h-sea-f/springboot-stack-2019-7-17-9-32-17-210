@@ -11,9 +11,16 @@ public class Institute {
     private int id;
     @Column(nullable = false, length = 50, unique = true)
     private String name;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="institute_id")
-    List<Ombudsman> ombudsmans;
+    private List<Ombudsman> ombudsmans;
+
+    public Institute() {
+    }
+
+    public Institute(String name) {
+        this.name = name;
+    }
 
     public List<Ombudsman> getOmbudsmans() {
         return ombudsmans;

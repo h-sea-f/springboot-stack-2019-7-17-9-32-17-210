@@ -12,10 +12,10 @@ public class Case {
     private String caseName;
     @Column(nullable = false)
     private long caseTime;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "information_id", nullable = false)
     private CriminalInformation criminalInformation;
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "institute_id", nullable = false)
     private Institute institute;
 
